@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Broadband Plans - Webmate Portal | Compare Internet Plans & Pricing</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <meta name="description" content="Compare Webmate broadband plans with transparent pricing. Find the perfect internet plan for your home or business with our interactive comparison tools and coverage checker." />
+</head>
+<body class="bg-background font-sans">
+    <!-- Navigation Header -->
+    <nav class="bg-surface shadow-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <!-- <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 32 32" fill="currentColor">
+                        <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                        <circle cx="16" cy="16" r="4" fill="currentColor"/>
+                    </svg>
+                    <span class="text-xl font-bold text-text-primary">ConnectISP</span> -->
+                    <img src="../images/logo.webp" alt="Webmate Logo" class="h-10 w-auto"/>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="homepage.html" class="text-text-secondary hover:text-primary transition-colors">Home</a>
+                    <a href="broadband_plans.html" class="text-primary font-medium">Plans</a>
+                    <!-- <a href="recharge_center.html" class="text-text-secondary hover:text-primary transition-colors">Recharge</a>
+                    <a href="service_coverage.html" class="text-text-secondary hover:text-primary transition-colors">Coverage</a> -->
+                    <a href="about_us.html" class="text-text-secondary hover:text-primary transition-colors">About</a>
+                    <a href="contact_us.html" class="text-text-secondary hover:text-primary transition-colors">Contact</a>
+                    <!-- <button class="btn-primary">Customer Portal</button> -->
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-text-secondary hover:text-primary">
+                        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-surface border-t border-gray-200">
+            <div class="px-4 py-2 space-y-2">
+                <a href="homepage.html" class="block py-2 text-text-secondary">Home</a>
+                <a href="broadband_plans.html" class="block py-2 text-primary font-medium">Plans</a>
+                <a href="recharge_center.html" class="block py-2 text-text-secondary">Recharge</a>
+                <a href="service_coverage.html" class="block py-2 text-text-secondary">Coverage</a>
+                <a href="about_us.html" class="block py-2 text-text-secondary">About</a>
+                <a href="contact_us.html" class="block py-2 text-text-secondary">Contact</a>
+                <button class="w-full text-left py-2 text-primary font-medium">Customer Portal</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative bg-gradient-to-br from-primary-50 via-surface to-secondary-50 overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <svg class="w-full h-full" viewBox="0 0 1200 800" fill="none">
+                <defs>
+                    <pattern id="network-pattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                        <circle cx="50" cy="50" r="2" fill="currentColor" class="text-primary"/>
+                        <line x1="50" y1="50" x2="100" y2="50" stroke="currentColor" stroke-width="1" class="text-primary"/>
+                        <line x1="50" y1="50" x2="50" y2="100" stroke="currentColor" stroke-width="1" class="text-primary"/>
+                    </pattern>
+                </defs>
+                <rect width="100%" height="100%" fill="url(#network-pattern)"/>
+            </svg>
+        </div>
+        
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="text-center">
+                <h1 class="text-4xl lg:text-5xl font-bold text-text-primary mb-4">
+                    Find Your Perfect <span class="text-primary">Internet Plan</span>
+                </h1>
+                <p class="text-xl text-text-secondary mb-8 max-w-3xl mx-auto">
+                    Compare our transparent broadband plans with no hidden fees. From basic browsing to ultra-high-speed streaming, we have the right plan for every need and budget.
+                </p>
+                
+                <!-- Quick Coverage Check -->
+                <div class="max-w-md mx-auto mb-8">
+                    <div class="flex gap-2">
+                        <input type="text" placeholder="Enter your PIN code" class="form-input flex-1" id="coverage-check" />
+                        <button class="btn-primary whitespace-nowrap" id="check-coverage-btn">
+                            Check Coverage
+                        </button>
+                    </div>
+                    <p class="text-sm text-text-secondary mt-2">Verify service availability in your area</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Filters & Tools -->
+    <section class="py-8 bg-surface border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-6 items-center justify-between">
+                <!-- Filter Controls -->
+                <div class="flex flex-wrap gap-4 items-center">
+                    <div class="flex items-center gap-2">
+                        <svg class="h-5 w-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.414A1 1 0 013 6.707V4z"/>
+                        </svg>
+                        <span class="text-sm font-medium text-text-primary">Filter by:</span>
+                    </div>
+                    
+                    <select class="form-input w-auto min-w-32" id="speed-filter">
+                        <option value>All Speeds</option>
+                        <option value="50">50 Mbps</option>
+                        <option value="100">100 Mbps</option>
+                        <option value="200">200 Mbps</option>
+                        <option value="500">500+ Mbps</option>
+                    </select>
+                    
+                    <select class="form-input w-auto min-w-32" id="price-filter">
+                        <option value>All Prices</option>
+                        <option value="0-999">Under ₹999</option>
+                        <option value="1000-1999">₹1,000 - ₹1,999</option>
+                        <option value="2000-2999">₹2,000 - ₹2,999</option>
+                        <option value="3000+">₹3,000+</option>
+                    </select>
+                    
+                    <select class="form-input w-auto min-w-32" id="type-filter">
+                        <option value>All Types</option>
+                        <option value="home">Home Plans</option>
+                        <option value="business">Business Plans</option>
+                        <option value="premium">Premium Plans</option>
+                    </select>
+                </div>
+
+                <!-- View Toggle & Tools -->
+                <div class="flex items-center gap-4">
+                    <button class="btn-outline text-sm" id="plan-recommender-btn">
+                        <svg class="h-4 w-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                        </svg>
+                        Plan Recommender
+                    </button>
+                    
+                    <div class="flex border border-gray-200 rounded-lg">
+                        <button class="px-3 py-2 text-sm bg-primary text-white rounded-l-lg" id="grid-view">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path d="M5 3a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2V5a2 2 0 00-2-2H5zM5 11a2 2 0 00-2 2v2a2 2 0 002 2h2a2 2 0 002-2v-2a2 2 0 00-2-2H5zM11 5a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V5zM11 13a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/>
+                            </svg>
+                        </button>
+                        <button class="px-3 py-2 text-sm text-text-secondary hover:bg-gray-50 rounded-r-lg" id="list-view">
+                            <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Grid -->
+    <section class="py-16 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="plans-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- ConnectBasic Plan -->
+                <div class="card hover:shadow-card-hover transition-all duration-300 plan-card" data-speed="50" data-price="599" data-type="home">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
+                            <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-2">ConnectBasic</h3>
+                        <div class="text-4xl font-bold text-primary mb-1">₹599</div>
+                        <div class="text-text-secondary">per month</div>
+                        <div class="text-sm text-secondary font-medium mt-2">Perfect for Small Families</div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Download Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">50 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Upload Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">10 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Data Limit</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">Unlimited</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Installation</span>
+                            </div>
+                            <span class="font-semibold text-secondary">Free</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Support</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">24/7</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full btn-primary">Choose Plan</button>
+                        <button class="w-full btn-outline text-sm">View Details</button>
+                    </div>
+                </div>
+
+                <!-- ConnectPro Plan (Most Popular) -->
+                <div class="card hover:shadow-card-hover transition-all duration-300 plan-highlight relative plan-card" data-speed="100" data-price="999" data-type="home">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-primary text-white px-4 py-1 rounded-full text-sm font-medium">
+                            Most Popular
+                        </span>
+                    </div>
+                    
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
+                            <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-2">ConnectPro</h3>
+                        <div class="text-4xl font-bold text-primary mb-1">₹999</div>
+                        <div class="text-text-secondary">per month</div>
+                        <div class="text-sm text-secondary font-medium mt-2">Ideal for Work from Home</div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Download Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">100 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Upload Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">20 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Data Limit</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">Unlimited</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Router + Installation</span>
+                            </div>
+                            <span class="font-semibold text-secondary">Free</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Support</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">Priority 24/7</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full btn-primary">Choose Plan</button>
+                        <button class="w-full btn-outline text-sm">View Details</button>
+                    </div>
+                </div>
+
+                <!-- ConnectUltra Plan -->
+                <div class="card hover:shadow-card-hover transition-all duration-300 plan-card" data-speed="200" data-price="1499" data-type="premium">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
+                            <svg class="h-8 w-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3l14 9-14 9V3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-2">ConnectUltra</h3>
+                        <div class="text-4xl font-bold text-primary mb-1">₹1,499</div>
+                        <div class="text-text-secondary">per month</div>
+                        <div class="text-sm text-secondary font-medium mt-2">Ultimate Streaming Experience</div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Download Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">200 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Upload Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">50 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Data Limit</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">Unlimited</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Premium Router</span>
+                            </div>
+                            <span class="font-semibold text-secondary">Free</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Support Manager</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">Dedicated</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full btn-primary">Choose Plan</button>
+                        <button class="w-full btn-outline text-sm">View Details</button>
+                    </div>
+                </div>
+
+                <!-- ConnectBusiness Plan -->
+                <div class="card hover:shadow-card-hover transition-all duration-300 plan-card" data-speed="500" data-price="2999" data-type="business">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-4">
+                            <svg class="h-8 w-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-2">ConnectBusiness</h3>
+                        <div class="text-4xl font-bold text-secondary mb-1">₹2,999</div>
+                        <div class="text-text-secondary">per month</div>
+                        <div class="text-sm text-secondary font-medium mt-2">Enterprise Grade Solution</div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Download Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">500 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Upload Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">100 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Static IP</span>
+                            </div>
+                            <span class="font-semibold text-secondary">Included</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">SLA Guarantee</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">99.9%</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Account Manager</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">Dedicated</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full btn-secondary">Choose Plan</button>
+                        <button class="w-full btn-outline text-sm">View Details</button>
+                    </div>
+                </div>
+
+                <!-- ConnectGamer Plan -->
+                <div class="card hover:shadow-card-hover transition-all duration-300 plan-card" data-speed="300" data-price="1999" data-type="premium">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-accent-100 rounded-full mb-4">
+                            <svg class="h-8 w-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-2">ConnectGamer</h3>
+                        <div class="text-4xl font-bold text-accent mb-1">₹1,999</div>
+                        <div class="text-text-secondary">per month</div>
+                        <div class="text-sm text-accent font-medium mt-2">Zero Lag Gaming</div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Download Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">300 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Upload Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">75 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Latency</span>
+                            </div>
+                            <span class="font-semibold text-accent">< 5ms</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Gaming Router</span>
+                            </div>
+                            <span class="font-semibold text-secondary">Free</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Game Servers</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">Priority Access</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full bg-accent text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-accent-700 focus:ring-4 focus:ring-accent-200">Choose Plan</button>
+                        <button class="w-full btn-outline text-sm">View Details</button>
+                    </div>
+                </div>
+
+                <!-- ConnectStudent Plan -->
+                <div class="card hover:shadow-card-hover transition-all duration-300 plan-card" data-speed="75" data-price="799" data-type="home">
+                    <div class="text-center mb-6">
+                        <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-4">
+                            <svg class="h-8 w-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-2xl font-bold text-text-primary mb-2">ConnectStudent</h3>
+                        <div class="text-4xl font-bold text-secondary mb-1">₹799</div>
+                        <div class="text-text-secondary">per month</div>
+                        <div class="text-sm text-secondary font-medium mt-2">Education Focused</div>
+                    </div>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Download Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">75 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Upload Speed</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">15 Mbps</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Educational Content</span>
+                            </div>
+                            <span class="font-semibold text-secondary">Free Access</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Study Hours Boost</span>
+                            </div>
+                            <span class="font-semibold text-text-primary">6 AM - 12 PM</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center">
+                                <svg class="h-5 w-5 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"/>
+                                </svg>
+                                <span class="text-text-secondary">Student Discount</span>
+                            </div>
+                            <span class="font-semibold text-secondary">20% Off</span>
+                        </div>
+                    </div>
+                    
+                    <div class="space-y-3">
+                        <button class="w-full btn-secondary">Choose Plan</button>
+                        <button class="w-full btn-outline text-sm">View Details</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="text-center mt-12">
+                <button class="btn-outline" id="load-more-btn">
+                    Load More Plans
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Speed Calculator Tool -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">
+                    Speed Calculator
+                </h2>
+                <p class="text-xl text-text-secondary">
+                    Find out how much speed you need based on your usage patterns
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Calculator Form -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-text-primary mb-6">Tell us about your usage</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">
+                                    Number of users in household
+                                </label>
+                                <select class="form-input" id="users-count">
+                                    <option value="1">1 person</option>
+                                    <option value="2">2-3 people</option>
+                                    <option value="4">4-5 people</option>
+                                    <option value="6">6+ people</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">
+                                    Primary activities (select all that apply)
+                                </label>
+                                <div class="space-y-2">
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="mr-3 text-primary" value="browsing" />
+                                        <span class="text-text-secondary">Web browsing & email</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="mr-3 text-primary" value="streaming" />
+                                        <span class="text-text-secondary">Video streaming (HD/4K)</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="mr-3 text-primary" value="gaming" />
+                                        <span class="text-text-secondary">Online gaming</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="mr-3 text-primary" value="work" />
+                                        <span class="text-text-secondary">Work from home/video calls</span>
+                                    </label>
+                                    <label class="flex items-center">
+                                        <input type="checkbox" class="mr-3 text-primary" value="downloads" />
+                                        <span class="text-text-secondary">Large file downloads</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-text-primary mb-2">
+                                    Peak usage time
+                                </label>
+                                <select class="form-input" id="peak-time">
+                                    <option value="morning">Morning (6 AM - 12 PM)</option>
+                                    <option value="afternoon">Afternoon (12 PM - 6 PM)</option>
+                                    <option value="evening">Evening (6 PM - 12 AM)</option>
+                                    <option value="night">Night (12 AM - 6 AM)</option>
+                                </select>
+                            </div>
+
+                            <button class="w-full btn-primary" id="calculate-speed">
+                                Calculate Recommended Speed
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Results -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-text-primary mb-6">Recommended for you</h3>
+                        
+                        <div id="speed-recommendation" class="hidden">
+                            <div class="bg-primary-50 rounded-lg p-6 mb-6">
+                                <div class="text-center">
+                                    <div class="text-4xl font-bold text-primary mb-2" id="recommended-speed">100 Mbps</div>
+                                    <div class="text-text-secondary">Recommended Speed</div>
+                                </div>
+                            </div>
+
+                            <div class="space-y-4" id="recommended-plans">
+                                <!-- Recommended plans will be populated here -->
+                            </div>
+                        </div>
+
+                        <div id="speed-placeholder" class="text-center py-12">
+                            <svg class="h-16 w-16 text-gray-300 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                            <p class="text-text-secondary">Complete the form to get your personalized speed recommendation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coverage Map -->
+    <section class="py-16 bg-gradient-to-br from-primary-50 to-secondary-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">
+                    Service Coverage Map
+                </h2>
+                <p class="text-xl text-text-secondary">
+                    Check availability in your area and see our expansion plans
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <!-- Map Placeholder -->
+                    <div class="lg:col-span-2">
+                        <div class="relative bg-gray-100 rounded-lg overflow-hidden" style="height: 400px;">
+                            <img src="https://images.unsplash.com/photo-1577401239170-897942555fb3?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Coverage Map" class="w-full h-full object-cover" onerror="this.src='https://images.pexels.com/photos/355952/pexels-photo-355952.jpeg?q=80&w=2940&auto=format&fit=crop'; this.onerror=null;" />
+                            
+                            <!-- Coverage Indicators -->
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-surface rounded-lg p-4 shadow-lg">
+                                    <h4 class="font-semibold text-text-primary mb-2">Interactive Map</h4>
+                                    <p class="text-sm text-text-secondary mb-4">Click on any area to check coverage</p>
+                                    <button class="btn-primary text-sm">View Full Map</button>
+                                </div>
+                            </div>
+
+                            <!-- Coverage Dots -->
+                            <div class="absolute top-20 left-32 w-4 h-4 bg-secondary rounded-full animate-pulse"></div>
+                            <div class="absolute top-40 right-40 w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                            <div class="absolute bottom-32 left-20 w-4 h-4 bg-secondary rounded-full animate-pulse"></div>
+                            <div class="absolute bottom-20 right-20 w-4 h-4 bg-primary rounded-full animate-pulse"></div>
+                        </div>
+                    </div>
+
+                    <!-- Coverage Info -->
+                    <div>
+                        <h3 class="text-xl font-semibold text-text-primary mb-6">Coverage Status</h3>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-secondary rounded-full mr-3"></div>
+                                <div>
+                                    <div class="font-medium text-text-primary">Active Coverage</div>
+                                    <div class="text-sm text-text-secondary">Service available now</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-primary rounded-full mr-3"></div>
+                                <div>
+                                    <div class="font-medium text-text-primary">Expanding Soon</div>
+                                    <div class="text-sm text-text-secondary">Coming in next 3 months</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center">
+                                <div class="w-4 h-4 bg-warning rounded-full mr-3"></div>
+                                <div>
+                                    <div class="font-medium text-text-primary">Planned Expansion</div>
+                                    <div class="text-sm text-text-secondary">Under evaluation</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-primary-50 rounded-lg p-4 mb-6">
+                            <h4 class="font-semibold text-text-primary mb-2">Quick Coverage Check</h4>
+                            <div class="space-y-3">
+                                <input type="text" placeholder="Enter PIN code" class="form-input" />
+                                <button class="w-full btn-primary text-sm">Check Availability</button>
+                            </div>
+                        </div>
+
+                        <div class="text-sm text-text-secondary">
+                            <p class="mb-2"><strong>200+ cities</strong> currently covered</p>
+                            <p><strong>50+ new areas</strong> added monthly</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plan Comparison Table -->
+    <section class="py-16 bg-surface">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">
+                    Detailed Plan Comparison
+                </h2>
+                <p class="text-xl text-text-secondary">
+                    Compare all features side by side to make the best choice
+                </p>
+            </div>
+
+            <div class="card overflow-x-auto">
+                <table class="w-full">
+                    <thead>
+                        <tr class="border-b border-gray-200">
+                            <th class="text-left py-4 px-6 font-semibold text-text-primary">Features</th>
+                            <th class="text-center py-4 px-6 font-semibold text-text-primary">ConnectBasic</th>
+                            <th class="text-center py-4 px-6 font-semibold text-text-primary bg-primary-50">ConnectPro</th>
+                            <th class="text-center py-4 px-6 font-semibold text-text-primary">ConnectUltra</th>
+                            <th class="text-center py-4 px-6 font-semibold text-text-primary">ConnectBusiness</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-4 px-6 font-medium text-text-primary">Monthly Price</td>
+                            <td class="py-4 px-6 text-center text-primary font-bold">₹599</td>
+                            <td class="py-4 px-6 text-center text-primary font-bold bg-primary-50">₹999</td>
+                            <td class="py-4 px-6 text-center text-primary font-bold">₹1,499</td>
+                            <td class="py-4 px-6 text-center text-secondary font-bold">₹2,999</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium text-text-primary">Download Speed</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">50 Mbps</td>
+                            <td class="py-4 px-6 text-center text-text-secondary bg-primary-50">100 Mbps</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">200 Mbps</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">500 Mbps</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium text-text-primary">Upload Speed</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">10 Mbps</td>
+                            <td class="py-4 px-6 text-center text-text-secondary bg-primary-50">20 Mbps</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">50 Mbps</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">100 Mbps</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium text-text-primary">Data Limit</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium">Unlimited</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium bg-primary-50">Unlimited</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium">Unlimited</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium">Unlimited</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium text-text-primary">Router</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">Basic (Free)</td>
+                            <td class="py-4 px-6 text-center text-text-secondary bg-primary-50">Advanced (Free)</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">Premium (Free)</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">Enterprise (Free)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium text-text-primary">Installation</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium">Free</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium bg-primary-50">Free</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium">Free</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium">Free</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium text-text-primary">Support</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">24/7 Chat</td>
+                            <td class="py-4 px-6 text-center text-text-secondary bg-primary-50">Priority 24/7</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">Dedicated Manager</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">Account Manager</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium text-text-primary">Static IP</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">₹200/month</td>
+                            <td class="py-4 px-6 text-center text-text-secondary bg-primary-50">₹100/month</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">₹50/month</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium">Included</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium text-text-primary">SLA Guarantee</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">99.5%</td>
+                            <td class="py-4 px-6 text-center text-text-secondary bg-primary-50">99.7%</td>
+                            <td class="py-4 px-6 text-center text-text-secondary">99.9%</td>
+                            <td class="py-4 px-6 text-center text-secondary font-medium">99.9%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-background">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl lg:text-4xl font-bold text-text-primary mb-4">
+                    Frequently Asked Questions
+                </h2>
+                <p class="text-xl text-text-secondary">
+                    Get answers to common questions about our broadband plans
+                </p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-toggle" data-target="faq-1">
+                        <span class="font-semibold text-text-primary">Can I upgrade or downgrade my plan anytime?</span>
+                        <svg class="h-5 w-5 text-text-secondary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq-1" class="hidden mt-4 text-text-secondary">
+                        Yes, you can upgrade or downgrade your plan at any time. Upgrades take effect immediately, while downgrades take effect from your next billing cycle. There are no charges for plan changes.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-toggle" data-target="faq-2">
+                        <span class="font-semibold text-text-primary">Is there a data limit on unlimited plans?</span>
+                        <svg class="h-5 w-5 text-text-secondary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq-2" class="hidden mt-4 text-text-secondary">
+                        Our unlimited plans have no data caps or fair usage policies. You can use as much data as you need without any throttling or additional charges.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-toggle" data-target="faq-3">
+                        <span class="font-semibold text-text-primary">How long does installation take?</span>
+                        <svg class="h-5 w-5 text-text-secondary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq-3" class="hidden mt-4 text-text-secondary">
+                        Installation typically takes 2-4 hours and is scheduled within 24-48 hours of plan activation. Our technicians will set up the connection and configure your router at no additional cost.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-toggle" data-target="faq-4">
+                        <span class="font-semibold text-text-primary">What if I'm not satisfied with the service?</span>
+                        <svg class="h-5 w-5 text-text-secondary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq-4" class="hidden mt-4 text-text-secondary">
+                        We offer a 30-day money-back guarantee. If you're not completely satisfied with our service, you can cancel within 30 days for a full refund of your first month's payment.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <button class="w-full text-left flex justify-between items-center faq-toggle" data-target="faq-5">
+                        <span class="font-semibold text-text-primary">Are there any hidden fees or charges?</span>
+                        <svg class="h-5 w-5 text-text-secondary transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                        </svg>
+                    </button>
+                    <div id="faq-5" class="hidden mt-4 text-text-secondary">
+                        No, we believe in transparent pricing. The monthly price you see is exactly what you pay. Installation, router, and basic support are all included at no extra cost.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-br from-primary to-primary-700 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl lg:text-4xl font-bold mb-4">
+                Ready to Get Connected?
+            </h2>
+            <p class="text-xl mb-8 opacity-90">
+                Join thousands of satisfied customers and experience the difference of reliable, high-speed internet.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact_us.html" class="bg-white text-primary px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-gray-100 shadow-lg">
+                    Talk to Expert
+                </a>
+                <a href="service_coverage.html" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold transition-all duration-300 hover:bg-white hover:text-primary">
+                    Check Coverage
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="md:col-span-2">
+                    <div class="flex items-center mb-4">
+                        <!-- <svg class="h-8 w-8 text-primary mr-3" viewBox="0 0 32 32" fill="currentColor">
+                            <path d="M16 2L4 8v16l12 6 12-6V8L16 2zm0 4l8 4v12l-8 4-8-4V10l8-4z"/>
+                            <circle cx="16" cy="16" r="4" fill="currentColor"/>
+                        </svg>
+                        <span class="text-xl font-bold">ConnectISP</span> -->
+                        <img src="../images/logo.webp" alt="Webmate Logo" class="h-10 w-auto bg-white p-2 rounded"/>
+                    </div>
+                    <p class="text-gray-300 mb-4 max-w-md">
+                        India's most reliable broadband service provider, connecting communities 
+                        and empowering digital lives with transparent pricing and exceptional support.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
+                            </svg>
+                        </a>
+                        <a href="javascript:void(0)" class="text-gray-400 hover:text-white transition-colors">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="broadband_plans.html" class="text-gray-300 hover:text-white transition-colors">Broadband Plans</a></li>
+                        <!-- <li><a href="recharge_center.html" class="text-gray-300 hover:text-white transition-colors">Recharge Center</a></li>
+                        <li><a href="service_coverage.html" class="text-gray-300 hover:text-white transition-colors">Service Coverage</a></li> -->
+                        <li><a href="about_us.html" class="text-gray-300 hover:text-white transition-colors">About Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div>
+                    <h4 class="font-semibold mb-4">Support</h4>
+                    <ul class="space-y-2">
+                        <li><a href="contact_us.html" class="text-gray-300 hover:text-white transition-colors">Contact Us</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-colors">Network Status</a></li>
+                        <li><a href="javascript:void(0)" class="text-gray-300 hover:text-white transition-colors">Report Issue</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Webmate Portal. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Plan Recommender Modal -->
+    <div id="recommender-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-surface rounded-lg shadow-modal max-w-2xl w-full max-h-screen overflow-y-auto">
+                <div class="p-6">
+                    <div class="flex justify-between items-center mb-6">
+                        <h3 class="text-2xl font-bold text-text-primary">Plan Recommender</h3>
+                        <button id="close-modal" class="text-text-secondary hover:text-text-primary">
+                            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">What's your budget range?</label>
+                            <select class="form-input">
+                                <option value>Select budget</option>
+                                <option value="500-1000">₹500 - ₹1,000</option>
+                                <option value="1000-2000">₹1,000 - ₹2,000</option>
+                                <option value="2000-3000">₹2,000 - ₹3,000</option>
+                                <option value="3000+">₹3,000+</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">Primary use case?</label>
+                            <select class="form-input">
+                                <option value>Select use case</option>
+                                <option value="basic">Basic browsing & email</option>
+                                <option value="streaming">Video streaming & entertainment</option>
+                                <option value="work">Work from home</option>
+                                <option value="gaming">Gaming & streaming</option>
+                                <option value="business">Business operations</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-sm font-medium text-text-primary mb-2">How many devices will be connected?</label>
+                            <select class="form-input">
+                                <option value>Select device count</option>
+                                <option value="1-5">1-5 devices</option>
+                                <option value="6-10">6-10 devices</option>
+                                <option value="11-20">11-20 devices</option>
+                                <option value="20+">20+ devices</option>
+                            </select>
+                        </div>
+                        
+                        <button class="w-full btn-primary">Get Recommendation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Coverage check functionality
+        document.getElementById('check-coverage-btn').addEventListener('click', function() {
+            const pincode = document.getElementById('coverage-check').value;
+            if (pincode) {
+                alert(`Checking coverage for PIN code: ${pincode}. Service is available in your area!`);
+            } else {
+                alert('Please enter a valid PIN code.');
+            }
+        });
+
+        // Plan filtering
+        function filterPlans() {
+            const speedFilter = document.getElementById('speed-filter').value;
+            const priceFilter = document.getElementById('price-filter').value;
+            const typeFilter = document.getElementById('type-filter').value;
+            const planCards = document.querySelectorAll('.plan-card');
+
+            planCards.forEach(card => {
+                let show = true;
+                
+                if (speedFilter && parseInt(card.dataset.speed) < parseInt(speedFilter)) {
+                    show = false;
+                }
+                
+                if (priceFilter) {
+                    const price = parseInt(card.dataset.price);
+                    const [min, max] = priceFilter.split('-').map(p => parseInt(p.replace('+', '')));
+                    if (priceFilter.includes('+')) {
+                        if (price < min) show = false;
+                    } else {
+                        if (price < min || price > max) show = false;
+                    }
+                }
+                
+                if (typeFilter && card.dataset.type !== typeFilter) {
+                    show = false;
+                }
+                
+                card.style.display = show ? 'block' : 'none';
+            });
+        }
+
+        document.getElementById('speed-filter').addEventListener('change', filterPlans);
+        document.getElementById('price-filter').addEventListener('change', filterPlans);
+        document.getElementById('type-filter').addEventListener('change', filterPlans);
+
+        // Speed calculator
+        document.getElementById('calculate-speed').addEventListener('click', function() {
+            const users = parseInt(document.getElementById('users-count').value);
+            const activities = Array.from(document.querySelectorAll('input[type="checkbox"]:checked')).map(cb => cb.value);
+            
+            let recommendedSpeed = 25; // Base speed
+            
+            // Add speed based on users
+            recommendedSpeed += users * 15;
+            
+            // Add speed based on activities
+            activities.forEach(activity => {
+                switch(activity) {
+                    case 'streaming': recommendedSpeed += 25; break;
+                    case 'gaming': recommendedSpeed += 30; break;
+                    case 'work': recommendedSpeed += 20; break;
+                    case 'downloads': recommendedSpeed += 35; break;
+                    default: recommendedSpeed += 10;
+                }
+            });
+            
+            document.getElementById('recommended-speed').textContent = recommendedSpeed + ' Mbps';
+            document.getElementById('speed-placeholder').classList.add('hidden');
+            document.getElementById('speed-recommendation').classList.remove('hidden');
+            
+            // Show recommended plans
+            const recommendedPlans = document.getElementById('recommended-plans');
+            recommendedPlans.innerHTML = `
+                <div class="border border-primary rounded-lg p-4">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h4 class="font-semibold text-text-primary">ConnectPro</h4>
+                            <p class="text-sm text-text-secondary">Perfect match for your needs</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-primary">₹999</div>
+                            <button class="btn-primary text-sm mt-2">Choose Plan</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        });
+
+        // FAQ toggles
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', function() {
+                const target = document.getElementById(this.dataset.target);
+                const icon = this.querySelector('svg');
+                
+                target.classList.toggle('hidden');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+
+        // Plan recommender modal
+        document.getElementById('plan-recommender-btn').addEventListener('click', function() {
+            document.getElementById('recommender-modal').classList.remove('hidden');
+        });
+
+        document.getElementById('close-modal').addEventListener('click', function() {
+            document.getElementById('recommender-modal').classList.add('hidden');
+        });
+
+        // View toggle (grid/list)
+        document.getElementById('grid-view').addEventListener('click', function() {
+            document.getElementById('plans-container').className = 'grid md:grid-cols-2 lg:grid-cols-3 gap-8';
+            this.classList.add('bg-primary', 'text-white');
+            this.classList.remove('text-text-secondary');
+            document.getElementById('list-view').classList.remove('bg-primary', 'text-white');
+            document.getElementById('list-view').classList.add('text-text-secondary');
+        });
+
+        document.getElementById('list-view').addEventListener('click', function() {
+            document.getElementById('plans-container').className = 'space-y-6';
+            this.classList.add('bg-primary', 'text-white');
+            this.classList.remove('text-text-secondary');
+            document.getElementById('grid-view').classList.remove('bg-primary', 'text-white');
+            document.getElementById('grid-view').classList.add('text-text-secondary');
+        });
+
+        // Load more functionality
+        document.getElementById('load-more-btn').addEventListener('click', function() {
+            alert('Loading more plans... In a real application, this would load additional plans via AJAX.');
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
